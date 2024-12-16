@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/responsive-cards-assignment/static/css/main.dab98c2a.css",
+    "main.js": "/responsive-cards-assignment/static/js/main.aaa8ae48.js",
+    "static/js/488.92aae71b.chunk.js": "/responsive-cards-assignment/static/js/488.92aae71b.chunk.js",
+    "index.html": "/responsive-cards-assignment/index.html",
+    "main.dab98c2a.css.map": "/responsive-cards-assignment/static/css/main.dab98c2a.css.map",
+    "main.aaa8ae48.js.map": "/responsive-cards-assignment/static/js/main.aaa8ae48.js.map",
+    "488.92aae71b.chunk.js.map": "/responsive-cards-assignment/static/js/488.92aae71b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dab98c2a.css",
+    "static/js/main.aaa8ae48.js"
+  ]
+}
