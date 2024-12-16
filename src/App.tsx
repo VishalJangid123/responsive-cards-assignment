@@ -1,24 +1,47 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { Tag, Place } from "./Places.type";
+import Card from "./Components/Card";
 
-function App() {
+const placesEndpoint = `${process.env.REACT_APP_PLACES_API_URL}`;
+const tagsEndpoint = `${process.env.REACT_APP_TAGS_API_URL}`;
+
+export default function App() {
+  const [places, setPlaces] = useState<Place[]>([]);
+
+  const fetchData = async () => {
+    try {
+      const placesResponse = await fetch(placesEndpoint);
+      const tagsResponse = await fetch(tagsEndpoint);
+      const placesData: Place[] = await placesResponse.json();
+      const tagsData: Tag[] = await tagsResponse.json();
+
+      const tagsMap = new Map<number, Tag>();
+      tagsData.forEach((tag) => {
+        tagsMap.set(tag.id, tag);
+      });
+
+      const updatedPlaces = placesData.map((place) => ({
+        ...place,
+        tagsNames: place.tags.map(
+          (tagId) => tagsMap.get(tagId) || { id: -1, name: "Unknown" }
+        ),
+      }));
+      setPlaces(updatedPlaces);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {places.map((place, index) => (
+        <Card place={place} key={index} />
+      ))}
     </div>
   );
 }
-
-export default App;
