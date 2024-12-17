@@ -7,7 +7,7 @@ This is a simple web application built using **React** and **TypeScript** to dis
 
 ## Live Demo
 
-A live demo of this project is available at:
+A live demo of this project is available at: https://vishaljangid123.github.io/responsive-cards-assignment/
 
 
 
@@ -83,8 +83,8 @@ In the root of your project, create a `.env` file. You'll need to define the API
 
 ```.env
 
-REACT_APP_PLACES_API_URL=https://api.example.com/places
-REACT_APP_TAGS_API_URL=https://api.example.com/tags
+REACT_APP_PLACES_API_URL = https://gist.githubusercontent.com/knot-freshket/142c21c3e8e54ef36e33f5dc6cf54077/raw/94ebab16839484f06d42eb799e30d0a945ff1a1b/freshket-places.json
+REACT_APP_TAGS_API_URL = https://gist.githubusercontent.com/knot-freshket/fa49e0a5c6100d50db781f28486324d2/raw/55bc966f54423dc73384b860a305e1b67e0bfd7d/freshket-tags.json
 ```
 
 ### Step 4: Run the Application
